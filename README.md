@@ -1,39 +1,64 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# BBQ 4 Beginners
 
-Welcome USER_NAME,
+ BBQ 4 Beginners is a simple website aimed at barbecue novices to get some basic information to help them make informed decisions
+ on what type of bbq will be best for their particular needs, what tools they will require, some simple recipes, and various 
+ hints and tips to get them started. 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+ # UX
 
-## Gitpod Reminders
+ The user should find the layout of the site familiar & intuitive, be visually appealing & easy to navigate.
+ As with any good user experience it's also informative and responsive.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+ # Features
 
-`python3 -m http.server`
+ A simple but effective multi-page site created from a modified bootstrap template. Each page has the same basic
+ layout with main image, navbar, and footer carried through each. Two of the pages have a button at the bottom 
+ to link directly to the FAQ page where it's appropriate. 
+ The contact page displays a reply message when the users details are submitted to alert the user that their message has been received.
+ The recipe names also have their own link to an ingredients and instruction page.
 
-A blue button should appear to click: *Make Public*,
+ # Key technologies used
 
-Another blue button should appear to click: *Open Browser*.
+ * HTML
+ * CSS
+ * PYTHON
+ * JS
+ * JQUERY
+ * JSON
+ * BOOTSTRAP 
+ * FONTAWESOME
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+ # Wireframes
 
-A blue button should appear to click: *Make Public*,
+ The wireframes for this project were completed utilising the balsamiq platform and are available to view in same folder.
 
-Another blue button should appear to click: *Open Browser*.
+ # Deployment
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+ This site was created using GITPOD, stored in GITHUB, and deployed through HEROKU.
 
-## Updates Since The Instructional Video
+ You can clone this project from this repository by,
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+ Clicking on the "clone or download" button at the top right
+ Copy the URL
+ Change the current working directory to the location of your clone directory
+ Enter git clone and paste in the URL
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+ # Testing
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+ I have run testing on Chrome developer tools and on W3C Validator. It has been checked on these screen sizes and renders well on all.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+ * Desktop
+ * Laptop
+ * Ipad
+ * Iphone
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+ It has been tested on
 
---------
+ * Google Chrome
+ * Firefox
+ * Safari
 
-Happy coding!
+ # Credits
+
+ * The framework of this project is from the bootstrap 'clean blog' template which I modified to suit.
+ * All pictures have been sourced from google images.
