@@ -22,6 +22,7 @@
  * HTML
  * CSS
  * PYTHON
+ * JINJA
  * JS
  * JQUERY
  * JSON
