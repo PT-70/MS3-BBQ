@@ -14,8 +14,10 @@ def recipes():
         data = json.load(json_data)
     return render_template('recipes.html', page_title='Simple recipes to make you look like a pro!', recipes=data)
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
+    if request.method == 'POST':
+        flash('Thanks {}, We have received your message'.format(request.form['name']))
     return render_template('contact.html', page_title='Contact us')
 
 @app.route('/grills')
