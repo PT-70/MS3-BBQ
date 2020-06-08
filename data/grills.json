@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Kettle Grill",
+        "description": "(Good for 2-6 people) A spherical charcoal grill introduced by the Weber grilling company in 1951. It's simplistic design and ease of use make it a great first barbecue, A good size cooking area allows you to cook several things at once without being so big as to get out of your control!",
+        "image_source": "https://kingfisher.scene7.com/is/image/Kingfisher/Category_Image_Charcoal_Barbecues?$PROMO_460_460$"
+    },
+    {
+        "name": "Barrel Grill",
+        "description": "(Good for 6+ people) Barrel barbecues were once mainly homemade from yes you got it old barrels. However now you can buy them off the shelf. Like the kettle it's a charcoal (or wood) barbecue and is fired up just the same way. The main difference is that they are generally much larger with hot shelves for stacking what you have cooked while you tend to other items. Therefore better if you are catering for larger groups of people.",
+        "image_source": "https://www.thesun.co.uk/wp-content/uploads/2017/04/george-home-expert-grill-barrel-grill-75cm-charcoal-bbq-c2a3391.jpg"
+    },
+    {
+        "name": "Build your own",
+        "description":"(Good for *Well that's up to you*) Now if you are really serious about your charcoal or wood barbecuing then this could be the one for you. As much a garden ornament as a grill, the hand built barbecue can be as simple or elaborate as your imagination allows, and can be a genuine thing of beauty. This can be built to exactly the spec you want and will last a lifetime!",
+        "image_source": "https://pixabiz.co.uk/wp-content/uploads/2019/09/SunshineBBQs-Stainless-Steel-DIY-Brick-BBQ-Kit-67cm-x-40cm-with-Heavy-Duty-6mm-Grills-0-5.jpg"
+    },
+    {
+        "name": "Gas Grill",
+        "description": "(Good for 2-12 people) In recent years Gas Barbecues have seen a huge sales increase due to their ease of use. Gone is trying to get the Charcoal lit when you start then clearing out the ashes when you finish! With gas all you need to do is turn it on and press the ignition and within 5 minutes your good to go. This convenience comes with a price though, both financial and in terms of taste. You don't get the same flavour from gas but with various flavoured wood chips and such like it is getting better!",
+        "image_source": "https://moneysaveronline.co.uk/wp-content/uploads/2018/03/Tesco-Gas-BBQ-Sale.jpg"
+    },
+    {
+        "name": "Disposable",
+        "description":"(Good for 2-4 people depending on size) Not sure barbecuing is for you? Then the disposable is a great way to suck it and see without commitment or expence. These range in size, price, and quality depending on where you buy them. I always suggest getting two just incase one doesn't last or work at all. Great for trying in the garden or taking to the beach or park (where permitted)",
+        "image_source": "https://images-na.ssl-images-amazon.com/images/I/519QPs12TpL._AC_SY400_.jpg"
+    }
+]

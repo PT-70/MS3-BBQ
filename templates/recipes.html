@@ -5,44 +5,44 @@
 {% for recipes in recipes %}
 
 <div class="row featurette">
-    {% if loop.index % 2 !=0 %}
+	{% if loop.index % 2 !=0 %}
 
-  <div class="col-md-7">
-    <h3><a href="/recipes/{{ recipes.url }}">{{ loop.index }}. {{ recipes.name }}</a></h3>
-    <p>
-      {{ recipes.description }}
-    </p>
-  </div>
-  <div class="col-md-5">
-    <img
+	<div class="col-md-7">
+		<h3><a href="/recipes/{{ recipes.url }}">{{ loop.index }}. {{ recipes.name }}</a></h3>
+		<p>
+			{{ recipes.description }}
+		</p>
+	</div>
+	<div class="col-md-5">
+		<img
       class="featurette-image image-responsive"
       src="{{ recipes.image_source }}"
       alt="Honey Chicken"
     />
   </div>
-  {% else %}
-   <div class="col-md-5">
-    <img
+		{% else %}
+		<div class="col-md-5">
+			<img
       class="featurette-image image-responsive"
       src="{{ recipes.image_source }}"
       alt="Honey Chicken"
     />
   </div>
 
-  <div class="col-md-7">
-    <h3><a href="/recipes/{{ recipes.url }}">{{ loop.index }}. {{ recipes.name }}</a></h3>
-    <p>
-      {{ recipes.description }}
-    </p>
-  </div>
-  {% endif %}
-</div>
-{% if loop.index != 7 %}
-<hr class="featurette-divider" />
-{% endif %} {% endfor %}
-<hr>
-<div class="clearfix">
-          <a class="btn btn-primary float-right" href="{{ url_for('tips') }}">FAQ'S &rarr;</a>
-        </div>
+			<div class="col-md-7">
+				<h3><a href="/recipes/{{ recipes.url }}">{{ loop.index }}. {{ recipes.name }}</a></h3>
+				<p>
+					{{ recipes.description }}
+				</p>
+			</div>
+			{% endif %}
+		</div>
+		{% if loop.index != 7 %}
+		<hr class="featurette-divider" />
+		{% endif %} {% endfor %}
+		<hr>
+		<div class="clearfix">
+			<a class="btn btn-primary float-right" href="{{ url_for('tips') }}">FAQ'S &rarr;</a>
+		</div>
 
-{% end block %}
+		{% end block %}
