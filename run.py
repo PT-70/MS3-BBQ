@@ -15,6 +15,14 @@ def recipes():
 def contact():
     return render_template('contact.html')
 
+@app.route('/grills')
+def contact():
+    return render_template('grills.html')
+
+@app.route('/tips')
+def contact():
+    return render_template('tips.html')
+
     if __name__ == '__main__':
         app.run(host=os.environ.get('IP'),
                 port=int(os.environ.get('PORT')),
