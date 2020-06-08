@@ -1,46 +1,46 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
+
 <h1>{{ page_title }}</h1>
 <hr>
 {% for grills in grills %}
 
 <div class="row featurette">
-	{% if loop.index % 2 !=0 %}
+  {% if loop.index % 2 !=0 %}
 
-	<div class="col-md-7">
-		<h3>{{ loop.index }} {{ grills.name }}</h3>
-		<p>{{ grills.description }}</p>
-	</div>
+  <div class="col-md-7">
+    <h3>{{ loop.index }} {{ grills.name }}</h3>
+    <p>{{ grills.description }}</p>
+  </div>
 
-	<div class="col-md-5">
-		<img
+  <div class="col-md-5">
+    <img
       class="featurette-image image-responsive"
       src="{{ grills.image_source }}"
       alt="Kettle Grill"
     />
   </div>
-		{% else %}
-		<div class="col-md-5">
-			<img
+  {% else %}
+  <div class="col-md-5">
+    <img
       class="featurette-image image-responsive"
       src="{{ grills.image_source }}"
       alt="Kettle Grill"
     />
   </div>
 
-			<div class="col-md-7">
-				<h3>{{ loop.index }} {{ grills.name }}</h3>
-				<p>{{ grills.description }}</p>
-			</div>
+  <div class="col-md-7">
+    <h3>{{ loop.index }} {{ grills.name }}</h3>
+    <p>{{ grills.description }}</p>
+  </div>
 
-			{% endif %}
-		</div>
+  {% endif %}
+</div>
 
-		{% if loop.index != 5 %}
-		<hr class="featurette-divider" />
-		{% endif %} {% endfor %}
-		<hr>
-		<div class="clearfix">
-			<a class="btn btn-primary float-right" href="{{ url_for('tips') }}">FAQ'S &rarr;</a>
-		</div>
-		{% end block %}
+{% if loop.index != 5 %}
+<hr class="featurette-divider" />
+{% endif %} {% endfor %} 
+<hr>
+<div class="clearfix">
+          <a class="btn btn-primary float-right" href="{{ url_for('tips') }}">FAQ'S &rarr;</a>
+        </div>
+{% endblock %}
