@@ -9,7 +9,10 @@ def index():
 
 @app.route('/recipes')
 def recipes():
-    return render_template('recipes.html', page_title='Simple recipes to make you look like a pro!')
+    data = []
+    with open('data/recipes.json', 'r') as json_data:
+        data = json.load(json_data)
+    return render_template('recipes.html', page_title='Simple recipes to make you look like a pro!', recipes=data)
 
 @app.route('/contact')
 def contact():
