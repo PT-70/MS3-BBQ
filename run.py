@@ -50,7 +50,21 @@ def contact():
         flash('Thanks {}, We have received your message'.format(request.form['name']))
     return render_template('contact.html', page_title='Contact')
 
+@app.route('/add_recipe', methods=['GET', 'POST'])
+def add_recipe():
+    if request.method == 'POST':
+        flash('Thanks {}, We have received your message'.format(request.form['name']))
+    return render_template('add_recipe.html', page_title='Post your recipe here')
+
+@app.route('/yours')
+def yours():
+    data = []
+    with open('data/yours.json', 'r') as json_data:
+        data = json.load(json_data)
+    return render_template('yours.html', page_title="Visitor recipes!", yours=data)
+     
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=False)
+            debug=True)
