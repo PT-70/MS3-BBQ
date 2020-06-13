@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+<h3>Add your own recipes here</h3>
+<div class="row">
+    <form action="{{ url_for('insert_task') }}" method="POST"  class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="task_name" name="task_name" type="text">
+                <label for="icon_prefix">Recipe Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix"></i>
+                <textarea name="task_description" id="task_description" class="materialize-textarea"></textarea>
+                <label for="icon_telephone">Recipe Description</label>
+            </div>
+        </div>
+        <div class="clearfix">
+          <a class="btn btn-primary float-left" href="{{ url_for('get_tasks') }}">Send &rarr;</a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

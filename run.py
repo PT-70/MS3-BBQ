@@ -1,13 +1,25 @@
 import os
 import json
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, redirect, request, flash, url_for
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId 
 
 app = Flask(__name__)
+
+app.config["MONGO_DBNAME"] = 'task_manager'
+app.config["MONGO_URI"] = 'mongodb+srv://paulyjd:tyson131@cluster0-n4t36.mongodb.net/task_manager?retryWrites=true&w=majority'
+
+mongo = PyMongo(app)
+
 app.secret_key = 'some_secret'
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/get_tasks')
+def get_tasks():
+    return render_template("tasks.html", tasks=mongo.db.tasks.find())
 
 @app.route('/grills')
 def grills():
@@ -50,19 +62,42 @@ def contact():
         flash('Thanks {}, We have received your message'.format(request.form['name']))
     return render_template('contact.html', page_title='Contact')
 
-@app.route('/add_recipe', methods=['GET', 'POST'])
-def add_recipe():
-    if request.method == 'POST':
-        flash('Thanks {}, We have received your message'.format(request.form['name']))
-    return render_template('add_recipe.html', page_title='Post your recipe here')
+@app.route('/add_task')
+def add_task():
+    return render_template('addtask.html')
+                         
 
-@app.route('/yours')
-def yours():
-    data = []
-    with open('data/yours.json', 'r') as json_data:
-        data = json.load(json_data)
-    return render_template('yours.html', page_title="Visitor recipes!", yours=data)
-     
+
+@app.route('/insert_task', methods=['POST'])
+def insert_task():
+    tasks =  mongo.db.tasks
+    tasks.insert_one(request.form.to_dict())
+    return redirect(url_for('get_tasks'))
+
+
+@app.route('/edit_task/<task_id>')
+def edit_task(task_id):
+    the_task =  mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+    return render_template('edittask.html', task=the_task)
+
+
+@app.route('/update_task/<task_id>', methods=["POST"])
+def update_task(task_id):
+    tasks = mongo.db.tasks
+    tasks.update( {'_id': ObjectId(task_id)},
+    
+  {
+        'task_name':request.form.get('task_name'),
+        'task_description': request.form.get('task_description'),
+        'due_date': request.form.get('due_date'),
+        'is_urgent':request.form.get('is_urgent')
+    })
+    return redirect(url_for('get_tasks'))
+
+@app.route('/delete_task/<task_id>')
+def delete_task(task_id):
+    mongo.db.tasks.remove({'_id': ObjectId(task_id)})
+    return redirect(url_for('get_tasks'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
