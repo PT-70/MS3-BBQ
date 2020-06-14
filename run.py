@@ -3,11 +3,16 @@ import json
 from flask import Flask, render_template, redirect, request, flash, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
+from os import path
+if path.exists("env.py"):
+  import env 
 
 app = Flask(__name__)
 
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
 app.config["MONGO_DBNAME"] = 'task_manager'
-app.config["MONGO_URI"] = 'mongodb+srv://paulyjd:tyson131@cluster0-n4t36.mongodb.net/task_manager?retryWrites=true&w=majority'
+app.config["MONGO_URI"] = 'mongodb+srv://paulyjd:SECRET_KEY@cluster0-n4t36.mongodb.net/task_manager?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
 
