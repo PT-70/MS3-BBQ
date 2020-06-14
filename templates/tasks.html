@@ -1,32 +1,35 @@
 {% extends 'base.html'%} {% block content %}
 <h3>Your added Recipes</h3>
 <div class="row">
-    <ul class="collapsible" data-collapsible="accordion">
-        {% for task in tasks %}
-        <li>
-            <div class="collapsible-header">
-                <div class="col s3">
-                    <a href="{{url_for('delete_task', task_id=task._id)}}" type="button" class="btn btn-link">Delete</a>
-                    <a href="{{url_for('edit_task', task_id=task._id)}}" type="button" class="btn btn-link">Edit</a> 
-                     
-                </div>
-                <div class="container">
-                <div class=" task_header col s9">
-                    <strong>{{task.task_name}}</strong> - {{task.due_date}}
-                </div>
-            </div>
-            
-            <div class="collapsible-body">
-                <span>
-                {{task.task_description}} 
-            </span>
-            </div>
-            </div>
-        </li>
-        {% endfor %}
-
-    </ul>
+  <ul>
+    {% for task in tasks %}
+    <li>
+      <div>
+        <a
+          href="{{url_for('edit_task', task_id=task._id)}}"
+          type="button"
+          class="btn btn-info"
+        >
+          Edit</a
+        >
+        <a
+          href="{{url_for('delete_task', task_id=task._id)}}"
+          type="button"
+          class="btn btn-info"
+        >
+          Delete</a
+        >
+      </div>
+      <div>
+        <strong>{{task.task_name}}</strong>
+      </div>
+      <div>
+        <span>
+          {{task.task_description}}
+        </span>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
 </div>
 {% endblock %}
-
-<!--class="waves-effect waves-light btn btn_small">Delete-->

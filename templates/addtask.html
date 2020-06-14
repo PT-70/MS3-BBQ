@@ -1,29 +1,30 @@
 {% extends 'base.html' %} {% block content %}
 <h3>Add your own Recipes here</h3>
 <div class="row">
-    <form action="{{ url_for('insert_task') }}" method="POST"  class="col s12">
-        <div class="row">
-        <div class="input-field col s12">
-        <input id="task_name" name="task_name" type="text">
-        <label>Recipe Name</label>
-         </div>
-        </div>
+  <form action="{{ url_for('insert_task') }}" method="POST" class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="task_name" name="task_name" type="text" />
+        <label>Name</label>
+      </div>
+    </div>
 
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix"></i>
-                <textarea name="task_description" id="task_description" class="materialize-textarea"></textarea>
-                <label>Recipe Description</label>
-            </div>
-        </div>
+    <div class="row">
+      <div class="input-field col s12">
+        
+        <textarea
+          name="task_description"
+          id="task_description"
+          
+        ></textarea>
+        <label>Ingredients</label>
+      </div>
+    </div>
 
-        <div class="row">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Add Recipe
-                <i class="material-icons right"></i>
-             </button>
-        </div>
-
-    </form>
+    <div class="row">
+      <button type="button" class="btn btn-info">Add</button>
+    </div>
+  </form>
 </div>
 
 {% endblock %}

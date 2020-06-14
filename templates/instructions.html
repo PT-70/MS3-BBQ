@@ -1,16 +1,17 @@
-{% extends base.html %}
-{% block content %}
+{% extends base.html %} {% block content %}
 
 <div class="row">
-<div class="col-md-5">
-<img src="{{ instructions.image_source}}" alt=" image for {{ instructions.name }}"/>
-<h2 class="col-md-7">{{ instructions.name }}</h2>
-
-</div>
+  <div class="col-md-5">
+    <img
+      src="{{ instructions.image_source}}"
+      alt=" image for {{ instructions.name }}"
+    />
+    <h2 class="col-md-7">{{ instructions.name }}</h2>
+  </div>
 </div>
 
 <div class="col-md-12">
-<p>{{ instructions.description }}</p>
+  <p>{{ instructions.description }}</p>
 </div>
 
 {% endblock %}

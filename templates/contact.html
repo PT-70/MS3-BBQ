@@ -1,19 +1,20 @@
 {% extends 'base.html' %} {% block content %}
 <h1>{{ page_title }}</h1>
-<hr>
+<hr />
 <div class="row">
   <div class="col-lg-8 col-md-10 mx-auto">
-  {% with messages = get_flashed_messages() %}
-  {% if messages %}
-  <ul class="flashes">
-  {% for message in messages %}
-  <li>{{ message }}</li>
-  {% endfor %}
-  </ul>
-  {% endif %}
-  {% endwith %}
-    <h5> If your looking for our current barbecue prices and availability,<br>need more information, or just have a general enquiry.<br>
-     Then please get in touch using this form. <br>(Or you could send a smoke signal!)
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul class="flashes">
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+    <h5>
+      If your looking for our current barbecue prices and availability,<br />need
+      more information, or just have a general enquiry.<br />
+      Then please get in touch using this form. <br />(Or you could send a smoke
+      signal!)
     </h5>
 
     <form method="POST" name="sentMessage" id="contactForm" novalidate>
@@ -23,7 +24,8 @@
           <input
             type="text"
             class="form-control"
-            placeholder="Name" name='name'
+            placeholder="Name"
+            name="name"
             id="name"
             required
             data-validation-required-message="Please enter your name."
@@ -31,14 +33,15 @@
           <p class="help-block text-danger"></p>
         </div>
       </div>
-      
+
       <div class="control-group">
         <div class="form-group floating-label-form-group controls">
           <label>Email Address</label>
           <input
             type="email"
             class="form-control"
-            placeholder="Email Address" name='email'
+            placeholder="Email Address"
+            name="email"
             id="email"
             required
             data-validation-required-message="Please enter your email address."
@@ -52,7 +55,8 @@
           <input
             type="tel"
             class="form-control"
-            placeholder="Phone Number" name='phone'
+            placeholder="Phone Number"
+            name="phone"
             id="phone"
             required
             data-validation-required-message="Please enter your phone number."
@@ -66,7 +70,8 @@
           <textarea
             rows="5"
             class="form-control"
-            placeholder="Message" name='message'
+            placeholder="Message"
+            name="message"
             id="message"
             required
             data-validation-required-message="Please enter a message."
