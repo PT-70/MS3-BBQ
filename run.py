@@ -8,14 +8,14 @@ if path.exists("env.py"):
   import env 
 
 app = Flask(__name__)
+app.secret_key = os.environ.get("SECRET_KEY")
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+app.config["MONGO_DBNAME"] = "task_manager"
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
-app.config["MONGO_DBNAME"] = 'task_manager'
-app.config["MONGO_URI"] = 'mongodb+srv://paulyjd:SECRET_KEY@cluster0-n4t36.mongodb.net/task_manager?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
-
 
 
 @app.route('/')
