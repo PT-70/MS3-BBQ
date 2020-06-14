@@ -6,17 +6,21 @@
         <li>
             <div class="collapsible-header">
                 <div class="col s3">
-                    <a href="{{url_for('delete_task', task_id=task._id)}}" class="waves-effect waves-light btn btn_small">Delete</a>
-                    <a href="{{url_for('edit_task', task_id=task._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a>   
+                    <a href="{{url_for('delete_task', task_id=task._id)}}" type="button" class="btn btn-link">Delete</a>
+                    <a href="{{url_for('edit_task', task_id=task._id)}}" type="button" class="btn btn-link">Edit</a> 
+                     
                 </div>
+                <div class="container">
                 <div class=" task_header col s9">
                     <strong>{{task.task_name}}</strong> - {{task.due_date}}
                 </div>
             </div>
+            
             <div class="collapsible-body">
                 <span>
                 {{task.task_description}} 
             </span>
+            </div>
             </div>
         </li>
         {% endfor %}
@@ -24,3 +28,5 @@
     </ul>
 </div>
 {% endblock %}
+
+<!--class="waves-effect waves-light btn btn_small">Delete-->
