@@ -2,24 +2,36 @@
 <h3>Update Recipe</h3>
 <div class="row">
     <form action="{{ url_for('update_task', task_id=task._id) }}" method="POST" class="col s12">
+    
         <div class="row">
             <div class="input-field col s12">
+                <i class="material-icons prefix"></i>
                 <input id="task_name" name="task_name" type="text" class="validate" value="{{task.task_name}}">
-                <label>Recipe Name</label>
+                <label for="icon_prefix">Recipe Name</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
+                <i class="material-icons prefix"></i>
                 <textarea name="task_description" id="task_description" class="materialize-textarea">{{task.task_description}}</textarea>
-                <label>Recipe Description</label>
+                <label for="icon_telephone">Recipe Description</label>
             </div>
         </div>
+
         <div class="row">
             <button class="btn waves-effect waves-light" type="submit" name="action">Update Recipe
+                <i class="material-icons right"></i>
              </button>
         </div>
     </form>
 </div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        due_date = Date.parse('{{task.due_date}}');
+        $('#due_date').pickadate('picker').set('select', due_date, { format: 'dd/mm/yyyy' }).trigger('change');
+    });
+</script>
 
 {% endblock %}
