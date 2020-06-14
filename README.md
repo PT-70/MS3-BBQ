@@ -4,7 +4,7 @@
 
  BBQ 4 Beginners is a simple website aimed at barbecue novices to get some basic information to help them make informed decisions
  on what type of bbq will be best for their particular needs, what tools they will require, some simple recipes, and various 
- hints and tips to get them started. 
+ hints and tips to get them started. They can also add their own recipes to the site for others to use.
 
  # UX
 
@@ -15,8 +15,10 @@
 
  A simple but effective multi-page site created from a modified bootstrap template. Each page has the same basic
  layout with main image, navbar, and footer carried through each. Two of the pages have a button at the bottom 
- to link directly to the FAQ page where it's appropriate. 
- The contact page displays a reply message when the users details are submitted to alert the user that their message has been received.
+ to link directly to the FAQ page where it's appropriate.
+ There is a page where you can submit your own recipes. When a recipe is added it links to another page which displays all submitted
+ recipes which are then available to read, edit and delete. 
+ The contact page displays a reply message when the users details are submitted, this alerts the user that their message has been received.
  The recipe names also have their own link to an ingredients and instruction page.
 
  # Key technologies used
@@ -28,7 +30,9 @@
  * JS
  * JQUERY
  * JSON
+ * MONGODB
  * BOOTSTRAP 
+ * MATERIALIZE
  * FONTAWESOME
 
  # Wireframes
