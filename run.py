@@ -11,7 +11,7 @@ app.config["MONGO_URI"] = 'mongodb+srv://paulyjd:tyson131@cluster0-n4t36.mongodb
 
 mongo = PyMongo(app)
 
-app.secret_key = 'some_secret'
+
 
 @app.route('/')
 def index():
@@ -99,4 +99,4 @@ def delete_task(task_id):
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=True)
+            debug=False)
